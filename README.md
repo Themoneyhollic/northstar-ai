@@ -63,16 +63,22 @@ Browser
          └── mailto:  Prepared enquiry opens in the visitor's email client
 ```
 
-There is no application server or persistent database. Replace the placeholder
-recipient in `index.html` before using the enquiry form publicly.
+There is no application server or persistent database. Enquiries are prepared
+for `angch@tertiaryinfotech.com` in the visitor's default email application.
 
 ## Project structure
 
 ```text
 northstar-ai/
 ├── .agents/
-│   └── commands/
-│       └── github-push-secure.md
+│   ├── product-marketing.md
+│   ├── commands/
+│   │   └── github-push-secure.md
+│   └── skills/
+│       ├── frontend-design/
+│       ├── github-push-secure/
+│       ├── lead-magnets/
+│       └── seo-audit/
 ├── .github/
 │   └── workflows/
 │       └── deploy-pages.yml
@@ -99,16 +105,10 @@ open index.html
 
 You can also serve the folder with any basic static-file server.
 
-## Configure the enquiry recipient
+## Enquiry delivery
 
-In `index.html`, replace:
-
-```html
-data-recipient="hello@northstar-ai.example"
-```
-
-with the real business email address. The form validates the enquiry using
-FormJS and opens a prepared email for the visitor to review and send.
+The form validates the enquiry using FormJS and opens a prepared email to
+`angch@tertiaryinfotech.com` for the visitor to review and send.
 
 ## Deployment
 
@@ -120,13 +120,33 @@ Node.js.
 - GitHub Pages: <https://alfredang.github.io/northstar-ai/>
 - OpenAI Sites: <https://northstar-ai-consultancy.sales531787.chatgpt.site/>
 
-## Security
+## Secure publishing skill
 
-The project command
-[`/github-push-secure`](.agents/commands/github-push-secure.md) requires a
-blocking secret scan before staging or pushing. Sensitive environment files,
-private keys, credentials, archives, and third-party reference material are
-excluded through `.gitignore`.
+Invoke
+[`$github-push-secure`](.agents/skills/github-push-secure/SKILL.md) to run the
+project publishing workflow. It blocks exposed secrets, validates GitHub
+project-page asset paths, tests desktop and mobile rendering, deploys through
+GitHub Actions, and verifies the live page before reporting success.
+
+Sensitive environment files, private keys, credentials, archives, and
+third-party reference material are excluded through `.gitignore`.
+
+## Project skills
+
+Codex can invoke these repository-scoped workflows:
+
+- [`$frontend-design`](.agents/skills/frontend-design/SKILL.md) — improve the
+  conversion-focused visual design without changing the static technology stack.
+- [`$lead-magnets`](.agents/skills/lead-magnets/SKILL.md) — optimize the
+  Opportunity Map offer, enquiry form, qualification, and delivery journey.
+- [`$seo-audit`](.agents/skills/seo-audit/SKILL.md) — audit both live
+  deployments, technical SEO, on-page content, mobile performance, and trust.
+- [`$github-push-secure`](.agents/skills/github-push-secure/SKILL.md) — scan,
+  publish, deploy, and verify GitHub Pages.
+
+The shared [product marketing context](.agents/product-marketing.md) keeps all
+four skills aligned with Northstar AI’s audience, offer, evidence rules, visual
+identity, and plain HTML/CSS/JavaScript constraints.
 
 ## Contributing
 

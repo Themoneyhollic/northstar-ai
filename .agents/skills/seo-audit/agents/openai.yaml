@@ -1,0 +1,4 @@
+interface:
+  display_name: "Northstar SEO Audit"
+  short_description: "Audit Northstar AI’s search visibility"
+  default_prompt: "Use $seo-audit to audit Northstar AI’s live deployments and prioritize truthful SEO improvements."

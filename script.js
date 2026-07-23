@@ -43,31 +43,35 @@ form.addEventListener("submit", async (event) => {
 
   try {
     await formJs.validateForm();
-
-    const data = new FormData(form);
-    if (data.get("website")) {
-      form.hidden = true;
-      successMessage.hidden = false;
+  } catch {
+    if (!form.checkValidity()) {
+      statusMessage.textContent = "Please check the highlighted fields.";
+      statusMessage.hidden = false;
+      form.querySelector(":invalid")?.focus();
       return;
     }
+  }
 
-    submitButton.disabled = true;
-    buttonLabel.textContent = "Preparing your enquiry…";
-
-    const recipient = form.dataset.recipient;
-    const subject = encodeURIComponent("AI Opportunity Map enquiry");
-    const body = encodeURIComponent(createEmailBody(data));
-
+  const data = new FormData(form);
+  if (data.get("website")) {
     form.hidden = true;
     successMessage.hidden = false;
-    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
-  } catch {
-    statusMessage.textContent = "Please check the highlighted fields.";
-    statusMessage.hidden = false;
-  } finally {
-    submitButton.disabled = false;
-    buttonLabel.textContent = "Get my free AI Opportunity Map";
+    return;
   }
+
+  submitButton.disabled = true;
+  buttonLabel.textContent = "Preparing your enquiry…";
+
+  const recipient = form.dataset.recipient;
+  const subject = encodeURIComponent("AI Opportunity Map enquiry");
+  const body = encodeURIComponent(createEmailBody(data));
+
+  form.hidden = true;
+  successMessage.hidden = false;
+  window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+  submitButton.disabled = false;
+  buttonLabel.textContent = "Get my free AI Opportunity Map";
 });
 
 resetButton.addEventListener("click", () => {

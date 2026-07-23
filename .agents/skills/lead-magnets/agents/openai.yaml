@@ -1,0 +1,4 @@
+interface:
+  display_name: "Northstar Lead Magnets"
+  short_description: "Optimize the AI Opportunity Map offer"
+  default_prompt: "Use $lead-magnets to improve Northstar AI’s Opportunity Map offer and enquiry conversion."
