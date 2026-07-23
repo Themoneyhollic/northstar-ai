@@ -756,10 +756,21 @@ h1 {
 }
 
 .site-footer > div:first-child p,
-.copyright {
+.copyright,
+.powered-by {
   color: var(--ink-soft);
   font-size: 12px;
   margin: 0;
+}
+
+.powered-by a {
+  border-bottom: 1px solid currentColor;
+  font-weight: 700;
+}
+
+.powered-by a:hover,
+.powered-by a:focus-visible {
+  color: var(--blue);
 }
 
 .footer-links {
@@ -807,6 +818,10 @@ h1 {
   }
 
   .copyright {
+    grid-column: 1 / -1;
+  }
+
+  .powered-by {
     grid-column: 1 / -1;
   }
 }
@@ -955,6 +970,10 @@ h1 {
   }
 
   .copyright {
+    grid-column: auto;
+  }
+
+  .powered-by {
     grid-column: auto;
   }
 }

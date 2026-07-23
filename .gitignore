@@ -2,3 +2,24 @@
 .DS_Store
 /outputs/
 /work/
+
+# Local secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+secrets.json
+.netrc
+.npmrc
+
+# Browser automation output
+.playwright-mcp/
+
+# Distribution archives
+*.zip
+
+# Third-party source material
+**/reference/
