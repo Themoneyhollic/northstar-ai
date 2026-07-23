@@ -30,8 +30,9 @@ jobs:
 
       - name: Prepare static site
         run: |
-          mkdir -p _site
+          mkdir -p _site/.agents/hooks
           cp index.html styles.css script.js og.png _site/
+          cp .agents/hooks/pre-submit.js .agents/hooks/post-submit.js _site/.agents/hooks/
           touch _site/.nojekyll
 
       - name: Upload artifact

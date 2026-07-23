@@ -1,4 +1,6 @@
 import Form from "https://cdn.jsdelivr.net/npm/formjs-plugin@5.4.0/+esm";
+import { runPreSubmitHook } from "./.agents/hooks/pre-submit.js";
+import { runPostSubmitHook } from "./.agents/hooks/post-submit.js";
 
 const form = document.querySelector("#enquiry-form");
 const successMessage = document.querySelector("#success-message");
@@ -41,6 +43,10 @@ form.addEventListener("submit", async (event) => {
   event.preventDefault();
   statusMessage.hidden = true;
 
+  if (!runPreSubmitHook({ form, statusMessage })) {
+    return;
+  }
+
   try {
     await formJs.validateForm();
   } catch {
@@ -68,6 +74,7 @@ form.addEventListener("submit", async (event) => {
 
   form.hidden = true;
   successMessage.hidden = false;
+  runPostSubmitHook({ successMessage });
   window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
 
   submitButton.disabled = false;

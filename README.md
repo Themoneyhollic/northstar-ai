@@ -35,6 +35,8 @@ JavaScript with no Node.js, npm, framework, database, or build step.
 - Consultancy outcomes and testimonial sections
 - Mobile-first responsive layout
 - FormJS validation loaded directly in the browser
+- Pre-submit completeness hook for every visible enquiry field
+- Spoken and visible post-submit confirmation
 - Email-based enquiry handoff for static hosting
 - Accessible form labels, focus states, and reduced-motion support
 - Open Graph and X social-sharing metadata
@@ -57,7 +59,8 @@ JavaScript with no Node.js, npm, framework, database, or build step.
 Browser
 ├── index.html        Page structure and content
 ├── styles.css        Responsive visual system
-├── script.js         FormJS validation and enquiry flow
+├── script.js         FormJS validation, hooks, and enquiry flow
+├── .agents/hooks/    Pre-submit validation and post-submit voice hooks
 └── og.png            Social-sharing artwork
          │
          └── mailto:  Prepared enquiry opens in the visitor's email client
@@ -74,6 +77,9 @@ northstar-ai/
 │   ├── product-marketing.md
 │   ├── commands/
 │   │   └── github-push-secure.md
+│   ├── hooks/
+│   │   ├── pre-submit.js
+│   │   └── post-submit.js
 │   └── skills/
 │       ├── frontend-design/
 │       ├── github-push-secure/
@@ -109,6 +115,11 @@ You can also serve the folder with any basic static-file server.
 
 The form validates the enquiry using FormJS and opens a prepared email to
 `angch@tertiaryinfotech.com` for the visitor to review and send.
+
+Before the email is prepared, the pre-submit hook requires every visible field
+to be complete and valid. After a successful submission, the post-submit hook
+shows and speaks a confirmation that Northstar AI will respond within three
+business days.
 
 ## Deployment
 
