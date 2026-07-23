@@ -75,6 +75,10 @@ for `angch@tertiaryinfotech.com` in the visitor's default email application.
 northstar-ai/
 ├── .agents/
 │   ├── product-marketing.md
+│   ├── agents/
+│   │   ├── ai-news-researcher.md
+│   │   ├── ai-news-publisher.md
+│   │   └── ai-news-team.md
 │   ├── commands/
 │   │   └── github-push-secure.md
 │   ├── hooks/
