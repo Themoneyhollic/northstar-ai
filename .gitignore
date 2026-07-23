@@ -1,8 +1,4 @@
-/node_modules/
 /dist/
-/.vinext/
-/.wrangler/
 .DS_Store
-npm-debug.log*
 /outputs/
 /work/
