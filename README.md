@@ -85,7 +85,7 @@ northstar-ai/
 │   │   ├── pre-submit.js
 │   │   └── post-submit.js
 │   └── skills/
-│       ├── frontend-design/
+│       ├── tia-frontend-design-site/
 │       ├── github-push-secure/
 │       ├── lead-magnets/
 │       └── seo-audit/
@@ -150,7 +150,7 @@ third-party reference material are excluded through `.gitignore`.
 
 Codex can invoke these repository-scoped workflows:
 
-- [`$frontend-design`](.agents/skills/frontend-design/SKILL.md) — improve the
+- [`$tia-frontend-design-site`](.agents/skills/tia-frontend-design-site/SKILL.md) — improve the
   conversion-focused visual design without changing the static technology stack.
 - [`$lead-magnets`](.agents/skills/lead-magnets/SKILL.md) — optimize the
   Opportunity Map offer, enquiry form, qualification, and delivery journey.

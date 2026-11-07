@@ -1,0 +1,4 @@
+interface:
+  display_name: "Northstar Frontend Design"
+  short_description: "Design Northstar AI’s conversion-focused UI"
+  default_prompt: "Use $tia-frontend-design-site to improve the Northstar AI website while preserving its static stack and visual identity."
